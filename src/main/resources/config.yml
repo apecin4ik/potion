@@ -1,0 +1,108 @@
+# ВАШИ ЗЕЛЬЯ. Выдача: /ei give <ник> <id> [кол-во]  (или /baf give ...)
+# Эффекты: "ТИП;ТИКИ;УРОВЕНЬ"   (20 тиков = 1 сек; уровень 0 = I, 1 = II, 2 = III, 3 = IV, 4 = V)
+# lore - то, что видит игрок при наведении на зелье (пишите вручную, под эффекты)
+settings:
+  particles: false      # частицы эффектов
+  icon: false           # иконка эффекта в углу экрана
+  # В каких инвентарях можно держать баф-зелья (кроме инвентаря игрока).
+  # Всё остальное (наковальня, верстак, печь, воронка, торговля и т.д.) запрещено.
+  allowed-inventories:
+    - CHEST
+    - ENDER_CHEST
+
+messages:
+  prefix: "&8[&6Баф&8] "
+  already-active: "&cУ вас уже действует баф! Подождите ещё &e%seconds% сек."
+  cant-put: "&cЭто зелье можно хранить только в инвентаре, сундуке и эндер-сундуке."
+  no-permission: "&cНет прав."
+  usage: "&eИспользование: &f/ei give <ник> <id> [кол-во] &7| &f/ei reload"
+  player-not-found: "&cИгрок не найден."
+  item-not-found: "&cТакого баффа нет. Доступные: &f%list%"
+  given: "&aВыдано &f%amount% &aшт. &f%item% &aигроку &f%player%"
+  received: "&aВы получили баф-зелье."
+  reloaded: "&aКонфиг перезагружен. Баффов: &f%count%"
+
+items:
+  baf_sanata:
+    material: POTION
+    name: '&b❄ &4&lПодарок &f&lСанты &b❄'
+    lore:
+      - '&bСопротивление IV 0:25'
+      - '&bСкорость III 0:30'
+    glow: false
+    hide-effects: true
+    effects:
+      - "resistance;500;3"
+      - "speed;600;2"
+
+  Flame_Ascension:
+    material: POTION
+    name: '&#5453C5&lFl&#504CC2&lam&#4B46BF&le &#473FBC&lAs&#4238B9&lce&#3E31B6&lns&#392BB3&lio&#392BB3&ln'
+    lore:
+      - '&#5453C5Ре&#514EC3ге&#4D49C0не&#4A43BEра&#463EBCци&#4339B9я &#3F34B7II&#3C2EB5I &#3829B21:&#3524B000'
+      - '&#5453C5Пр&#514FC3ил&#4E4AC1ив &#4C46BFз&#4942BDдо&#463EBBро&#4339BAвь&#4035B8е &#3D31B6II&#3B2DB4I &#3828B21:&#3524B000'
+      - '&#5453C5Ог&#514EC3не&#4D49C0ст&#4A43BEой&#463EBCко&#4339B9ст&#3F34B7ь &#3C2EB5 8&#3829B2:0&#3829B20'
+    color: "0000FF"
+    glow: true
+    hide-effects: true
+    effects:
+      - "regeneration;1200;2"
+      - "health_boost;1200;2"
+      - "fire_resistance;9600;0"
+
+  Gods_Rampage:
+    material: POTION
+    name: '&#FB222B&lGo&#F4254D&ld’&#ED286F&ls &#E62B92&lRa&#DF2EB4&lmp&#D831D6&lag&#D831D6&le'
+    lore:
+      - '&#FB222BСи&#F32654ла&#EA297D V&#E22DA6 0&#D930CF:4&#D930CF0'
+      - '&#FB222BСк&#F52548ор&#EF2766ос&#E92A83ть&#E32CA0 V&#DD2FBD 0&#D731DB:4&#D731DB0'
+      - '&#FB222BОг&#F62445не&#F1275Eст&#EB2978ой&#E62B92ко&#E12DABст&#DC30C5ь 0&#D134F8:4&#D134F85'
+    glow: true
+    hide-effects: true
+    effects:
+      - "speed;800;4"
+      - "strength;800;4"
+      - "fire_resistance;900;0"
+
+  Hellrush:
+    material: POTION
+    name: '&#7F986C&lH&#6F856F&le&#607171&ll&#505E74&ll&#404A77&lr&#30377A&lu&#21237C&ls&#11107F&lh'
+    lore:
+      - '&#7F986CС&#758C6Eи&#6B7F6Fл&#617371а &#4D5A75I&#434E76V 1:00'
+      - '&#7F986CС&#788F6Dк&#70866Fо&#697D70р&#627471о&#5A6B72с&#536274т&#4C5975ь &#3D4677I&#363D79V 1:00'
+      - '&#7F986CО&#79906Dг&#72886Eн&#6C806Fе&#657870с&#5F7072т&#586873о&#526074й&#4B5875к&#455076о&#3E4877с&#384078т&#313879ь 2:00'
+    glow: true
+    hide-effects: true
+    effects:
+      - "speed;1200;3"
+      - "strength;1200;3"
+      - "fire_resistance;2400;0"
+
+  Mask_of_Madness:
+    material: POTION
+    name: '&#D01414&lMa&#B51413&lsk&#9B1512&l o&#801511&lf &#661510&lMa&#4B150F&ldn&#31160E&les&#31160E&ls'
+    lore:
+      - '&#D01414Со&#BD1413пр&#AB1413от&#981512ив&#861511ле&#731511ни&#601510е &#4E150FIV&#3B160E 0&#29160E:2&#29160E0'
+      - '&#D01414Си&#AB1413ла&#861511 I&#601510V &#3B160E0:&#16160D20'
+      - '&#D01414Сп&#B11413еш&#921512ка&#731511 I&#54150FV &#35160E0:&#16160D45'
+    glow: true
+    hide-effects: true
+    effects:
+      - "resistance;400;3"
+      - "strength;400;3"
+      - "haste;900;3"
+
+  pottion:   # Battle Trance (id оставлен как в вашем меню)
+    material: POTION
+    name: '&#983BC8&lB&#8C40BE&la&#7F46B4&lt&#734BAA&lt&#67509F&ll&#5A5695&le &#426081&lT&#356677&lr&#296B6D&la&#1D7062&ln&#107658&lc&#047B4E&le'
+    lore:
+      - '&#983BC8С&#8C40BEи&#7F46B4л&#734BAAа &#5A5695I&#4E5B8BI&#426081I 1:20'
+      - '&#983BC8С&#8C40BEк&#7F46B4о&#734BAAр&#67509Fо&#5A5695с&#4E5B8Bт&#426081ь III 1:20'
+      - '&#983BC8О&#8F3FC1г&#8743BAн&#7E46B2е&#754AABс&#6C4EA4т&#64529Dо&#5B5596й&#52598Fк&#4A5D87о&#416180с&#386479т&#306872ь 2:00'
+    color: "000014"
+    glow: true
+    hide-effects: true
+    effects:
+      - "speed;1600;2"
+      - "strength;1600;2"
+      - "fire_resistance;2400;0"
